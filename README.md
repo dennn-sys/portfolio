@@ -8,3 +8,5 @@ This is my portfolio website.
 
 - JS Framework - React + Vite
 - CSS Framework - Tailwind CSS
+- Database - Firebase Firestore
+- File Storage - Firebase Storage

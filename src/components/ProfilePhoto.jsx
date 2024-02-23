@@ -1,9 +1,9 @@
 import React from "react";
 import { avatar } from "../assets";
 
-export default function ProfilePhoto() {
+export default function ProfilePhoto({ avatar }) {
   return (
-    <div className="ring-background size-[180px] overflow-clip rounded-full bg-red-200 text-center ring-[10px]">
+    <div className="size-[180px] overflow-clip rounded-full bg-red-200 text-center ring-[10px] ring-background">
       <img src={avatar} alt="profile picture" />
     </div>
   );

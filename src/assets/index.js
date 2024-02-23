@@ -7,6 +7,7 @@ import palaro from "./palaro.png";
 import pubmat1 from "./pubmat1.png";
 import pubmat2 from "./pubmat2.png";
 import roms from "./roms.png";
+import defaultAvatar from "./default-avatar.jpg";
 
 export {
   avatar,
@@ -18,4 +19,5 @@ export {
   pubmat1,
   pubmat2,
   roms,
+  defaultAvatar,
 };

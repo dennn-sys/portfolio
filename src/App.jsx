@@ -11,11 +11,11 @@ function App() {
   return (
     <div
       className={cn(
-        "bg-muted flex w-screen flex-col items-center",
+        "flex w-screen flex-col items-center bg-muted",
         isDark && "dark",
       )}
     >
-      <div className="bg-background flex h-fit w-full justify-center ">
+      <div className="flex h-fit w-full justify-center bg-background ">
         <div className="flex h-fit max-w-[1366px] flex-grow flex-col items-center">
           <Topbar />
           <CoverPhoto />
@@ -24,7 +24,7 @@ function App() {
           </div>
         </div>
       </div>
-      <div className="bg-background sticky top-0 flex w-full justify-center shadow-md">
+      <div className="sticky top-0 flex w-full justify-center bg-background shadow-md">
         <div className="w-full max-w-[1302px] px-5">
           <Navbar />
         </div>
