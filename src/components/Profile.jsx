@@ -3,11 +3,11 @@ import { Link } from "./Link";
 import { LuMail, LuDownloadCloud } from "react-icons/lu";
 import { BsPatchCheckFill } from "react-icons/bs";
 
-export default function Profile({ avatar, name, resume, title }) {
+export default function Profile({ name, resume, title }) {
   return (
     <div className="flex w-full flex-col items-center  justify-center gap-4 border-b-2  pb-8 lg:h-[116px] lg:translate-y-0 lg:flex-row lg:items-end lg:gap-0">
       <div className="flex h-[90px] items-end lg:mr-4 lg:h-[180px] lg:translate-y-[15px]">
-        <ProfilePhoto avatar={avatar} variant="main" />
+        <ProfilePhoto variant="main" />
       </div>
 
       <div className=" flex-grow text-center lg:mr-4 lg:justify-end lg:text-left">

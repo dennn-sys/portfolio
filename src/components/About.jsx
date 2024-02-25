@@ -5,25 +5,24 @@ import { getDocs, collection } from "firebase/firestore";
 import PostHeader from "./PostHeader";
 import { FcLike } from "react-icons/fc";
 
-const defaultData = [
-  {
-    content: "Loading...",
-    date: "Jan 1, 2000",
-    hashtag: "",
-  },
-];
+const defaultData = {
+  content: "Loading...",
+  date: "Jan 1, 2000",
+  hashtag: "",
+};
 
 export default function About() {
   const [aboutData, setAboutData] = useState(defaultData);
   const about = collection(db, "about");
-  const content = aboutData[0].content;
-  const date = aboutData[0].date;
-  const hashtag = aboutData[0].hashtag;
+  const content = aboutData.content;
+  const date = aboutData.date;
+  const hashtag = aboutData.hashtag;
 
   async function getAbout() {
     try {
       const data = await getDocs(about);
-      setAboutData(data.docs.map((doc) => ({ ...doc.data() })));
+      const dataArr = data.docs.map((doc) => ({ ...doc.data() }));
+      setAboutData(dataArr[0]);
     } catch (error) {
       alert("Failed to fetch data. Please try again later.");
     }
@@ -43,7 +42,6 @@ export default function About() {
           <PostHeader title="Rodenmhar A. Ismael" date={date} />
           <p className="text-pretty">{content}</p>
         </div>
-
         <div className="project-footer flex items-start gap-3 p-4">
           <FcLike className="text-2xl" />
           <p className="text-muted-foreground">{hashtag}</p>

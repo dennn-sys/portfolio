@@ -24,7 +24,7 @@ const navItems = [
 
 export default function Navbar() {
   return (
-    <nav className="flex h-[70px] w-full items-center gap-1 text-[0.6rem] md:text-base">
+    <nav className="flex h-[70px] w-full items-center gap-1 overflow-auto text-base">
       {navItems.map((navItem) => (
         <a
           key={navItem.name}

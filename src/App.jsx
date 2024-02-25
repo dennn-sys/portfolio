@@ -1,4 +1,5 @@
 import { cn } from "./lib/utils";
+import Topbar from "./components/Topbar";
 import Header from "./components/Header";
 import Navbar from "./components/Navbar";
 import Aside from "./components/Aside";
@@ -13,6 +14,7 @@ function App() {
         isDark && "dark",
       )}
     >
+      <Topbar />
       <Header />
       <div className="sticky top-0 flex w-full justify-center bg-background shadow-md">
         <div className="w-full max-w-[1302px] px-5">

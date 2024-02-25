@@ -1,5 +1,17 @@
-import React from "react";
+import { FaGithub } from "react-icons/fa";
 
 export default function Topbar() {
-  return <div className="h-10 w-full bg-slate-500 lg:h-14">Topbar</div>;
+  return (
+    <div className="z-20 flex h-10 w-full items-center justify-between bg-background px-4 text-foreground shadow-md lg:h-14">
+      <div className=" flex size-[30px] items-center justify-center rounded-full bg-blue-500 text-white">
+        Ri
+      </div>
+
+      <div className="flex items-center gap-2">
+        <a href="https://github.com/dennn-sys" target="_blank" rel="noreferrer">
+          <FaGithub className="text-3xl" />
+        </a>
+      </div>
+    </div>
+  );
 }

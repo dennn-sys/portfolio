@@ -1,8 +1,10 @@
 import React from "react";
-import { avatar } from "../assets";
 import { cn } from "../lib/utils";
+import { useStore } from "../store/useStore";
 
-export default function ProfilePhoto({ avatar, variant }) {
+export default function ProfilePhoto({ variant }) {
+  const avatar = useStore((state) => state.avatar);
+
   let style;
 
   if (variant === "main") {
@@ -13,16 +15,11 @@ export default function ProfilePhoto({ avatar, variant }) {
 
   return (
     <div
-      className={cn("overflow-clip rounded-full bg-red-200 text-center", style)}
+      className={cn(
+        "overflow-clip rounded-full bg-background text-center",
+        style,
+      )}
     >
-      <img src={avatar} alt="profile picture" />
-    </div>
-  );
-}
-
-export function ProfileSmall() {
-  return (
-    <div className="size-[42px] overflow-clip rounded-full bg-red-200 text-center">
       <img src={avatar} alt="profile picture" />
     </div>
   );
