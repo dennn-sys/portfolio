@@ -1,7 +1,5 @@
 import { cn } from "./lib/utils";
-import CoverPhoto from "./components/CoverPhoto";
 import Header from "./components/Header";
-import Topbar from "./components/Topbar";
 import Navbar from "./components/Navbar";
 import Aside from "./components/Aside";
 import MainContent from "./components/MainContent";
@@ -15,15 +13,7 @@ function App() {
         isDark && "dark",
       )}
     >
-      <div className="flex h-fit w-full justify-center bg-background ">
-        <div className="flex h-fit max-w-[1366px] flex-grow flex-col items-center">
-          <Topbar />
-          <CoverPhoto />
-          <div className="w-full max-w-[1302px] px-5">
-            <Header />
-          </div>
-        </div>
-      </div>
+      <Header />
       <div className="sticky top-0 flex w-full justify-center bg-background shadow-md">
         <div className="w-full max-w-[1302px] px-5">
           <Navbar />

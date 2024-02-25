@@ -1,17 +1,12 @@
 import { FcLike } from "react-icons/fc";
 import { ProfileSmall } from "./ProfilePhoto";
+import PostHeader from "./PostHeader";
 
 export default function ProjectCard({ title, date, post, image, stack }) {
   return (
-    <div className="bg-background text-foreground rounded-lg shadow-md">
+    <div className="rounded-lg bg-background text-foreground shadow-md">
       <div className="project-header space-y-2 p-4">
-        <div className="flex items-start gap-3">
-          <ProfileSmall />
-          <div>
-            <h3 className=" inline font-bold">{title}</h3>
-            <p className="text-muted-foreground text-sm">{date}</p>
-          </div>
-        </div>
+        <PostHeader title={title} date={date} />
         <p className="text-pretty">{post}</p>
       </div>
       <img src={image} alt="img" className="object-contain" />

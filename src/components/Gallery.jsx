@@ -1,11 +1,26 @@
-import { useState, useCallback } from "react";
+import { useState, useEffect, useCallback } from "react";
 import ImageViewer from "react-simple-image-viewer";
-import { pubmat1, pubmat2, palaro, back, front, packaging } from "../assets";
+import { db } from "../config/firebase";
+import { getDocs, collection } from "firebase/firestore";
 
 export default function Gallery() {
+  const photos = collection(db, "photos");
+  const [images, setImages] = useState([]);
   const [currentImage, setCurrentImage] = useState(0);
   const [isViewerOpen, setIsViewerOpen] = useState(false);
-  const images = [pubmat1, pubmat2, palaro, back, front, packaging];
+
+  async function getPhotos() {
+    try {
+      const data = await getDocs(photos);
+      setImages(data.docs.map((doc) => doc.data().imageUrl));
+    } catch (error) {
+      alert("Failed to fetch data. Please try again later.");
+    }
+  }
+
+  useEffect(() => {
+    getPhotos();
+  }, []);
 
   const openImageViewer = useCallback((index) => {
     setCurrentImage(index);
@@ -20,11 +35,11 @@ export default function Gallery() {
   return (
     <div
       id="photos"
-      className="bg-background text-foreground space-y-2 rounded-lg p-4 shadow-md"
+      className="space-y-2 rounded-lg bg-background p-4 text-foreground shadow-md"
     >
       <h2 className=" text-xl font-bold">Photos</h2>
       <p className="pb-2 ">Here are some of my graphic design works.</p>
-      <div className="grid grid-cols-3 gap-1 overflow-clip rounded-lg">
+      <div className="grid grid-cols-4 gap-1 overflow-clip rounded-lg md:grid-cols-6 lg:grid-cols-3">
         {images.map((src, index) => (
           <img
             src={src}
