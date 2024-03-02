@@ -1,6 +1,7 @@
 import Projects from "./Projects";
 import About from "./About";
 import Skills from "./Skills";
+import Message from "./Message";
 
 export default function MainContent() {
   return (
@@ -8,6 +9,7 @@ export default function MainContent() {
       <About />
       <Skills />
       <Projects />
+      <Message />
     </div>
   );
 }

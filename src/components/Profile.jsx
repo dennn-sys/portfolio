@@ -28,7 +28,7 @@ export default function Profile({ name, resume, title }) {
           <LuDownloadCloud />
           <span>My Resume</span>
         </Link>
-        <Link>
+        <Link href="#message">
           <LuMail />
           <span>Message</span>
         </Link>

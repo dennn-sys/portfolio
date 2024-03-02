@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from "react";
 import { db } from "../config/firebase";
 import { getDocs, collection } from "firebase/firestore";
@@ -12,8 +13,9 @@ const defaultData = {
 };
 
 export default function About() {
-  const [aboutData, setAboutData] = useState(defaultData);
   const about = collection(db, "about");
+
+  const [aboutData, setAboutData] = useState(defaultData);
   const content = aboutData.content;
   const date = aboutData.date;
   const hashtag = aboutData.hashtag;
