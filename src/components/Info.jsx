@@ -39,7 +39,7 @@ export default function Info() {
     <div className="space-y-2 rounded-lg bg-background p-4 text-foreground shadow-md">
       <h2 className=" text-xl font-bold">Info</h2>
       <p className="pb-2 text-center">{tagline}</p>
-      <hr />
+      <hr className="border-input" />
       <div className="flex items-center gap-3 pt-2">
         <LuGraduationCap className="text-2xl text-muted-foreground" />
         <span>Studied at {school}</span>

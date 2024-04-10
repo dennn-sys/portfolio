@@ -4,14 +4,16 @@ import Header from "./components/Header";
 import Navbar from "./components/Navbar";
 import Aside from "./components/Aside";
 import MainContent from "./components/MainContent";
+import { useStore } from "./store/useStore";
 
 function App() {
-  const isDark = false;
+  const darkmode = useStore((state) => state.darkmode);
+
   return (
     <div
       className={cn(
         "flex w-full flex-col items-center bg-muted",
-        isDark && "dark",
+        darkmode && "dark",
       )}
     >
       <Topbar />
